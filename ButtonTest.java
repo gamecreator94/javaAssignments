@@ -16,7 +16,8 @@ import java.util.Random;
 
 /**
  *
- * @author rawsonmb
+ * @author matt rawson
+ * 5/7/14
  */
 public class ButtonTest extends JFrame
     {
@@ -24,8 +25,16 @@ public class ButtonTest extends JFrame
         
         private static final int windowWidth = 400;
         private static final int windowHeight = 400;
+        
+        /* playersNumber and computerNumber hold a number that goes with each
+        specific choice they are then used for comparison to see who won.*/ 
+        
         private int playersNumber = 0;
         private int computerNumber = 0;
+        
+        /* The rock,paper,and scissorListeners are called depending on the 
+        what the player chose. They set playersNumber to the correct number 
+        for comparison later.*/
         
         public class RockListener implements ActionListener
             {
@@ -85,6 +94,8 @@ public class ButtonTest extends JFrame
                 
             }// public ButtonTest()
         
+        // The window is build here in the function windowBuild()
+        
         private void windowBuild()
             {
                
@@ -117,6 +128,10 @@ public class ButtonTest extends JFrame
             scissor.addActionListener(scissorOutputed);
             
             }// private void windowBuild()
+        
+        /* In computerChoice() the computer will randomly generate a number
+        0 and 3. If the number is zero, it will keep randomizing. Then it 
+        outputs what the computer chose*/
         
             public void computerChoice()
                 {
@@ -154,6 +169,11 @@ public class ButtonTest extends JFrame
                     
                 }// public void computerChoice()
             
+            /* In determineWinner() the statements check to see who won.
+            The first three statements check to see if the player won. The next
+            three check to see if the player lost, and the last checks if it is 
+            a tie.*/
+            
             public void determineWinner()
                 {
 
@@ -169,42 +189,42 @@ public class ButtonTest extends JFrame
                     
                     System.out.println("You win");
                         
-                    }// if( playersNumber == 2 && computerNumber == 1 )
+                    }// else if( playersNumber == 2 && computerNumber == 1 )
                 
                 else if( playersNumber == 3 && computerNumber == 2 )
                     {
                     
                     System.out.println("You win");
                         
-                    }// if( playersNumber == 3 && computerNumber == 2 )
+                    }// else if( playersNumber == 3 && computerNumber == 2 )
                 
                 else if( playersNumber == 3 && computerNumber == 1 )
                     {
                     
                     System.out.println("You Lose");
                         
-                    }// if( playersNumber == 3 && computerNumber == 1 )
+                    }// else if( playersNumber == 3 && computerNumber == 1 )
                 
                 else if( playersNumber == 1 && computerNumber == 2 )
                     {
                     
                     System.out.println("You Lose");
                         
-                    }// if( playersNumber == 1 && computerNumber == 2 )
+                    }// else if( playersNumber == 1 && computerNumber == 2 )
                 
                 else if( playersNumber == 2 && computerNumber == 3 )
                     {
                     
                     System.out.println("You Lose");
                         
-                    }// if( playersNumber == 2 && computerNumber == 3 )
+                    }// else if( playersNumber == 2 && computerNumber == 3 )
                 
                 else
                     {
                     
                     System.out.println("You and the compuer tied.");
                         
-                    }
+                    }// else of if( playersNumber == 1 && computerNumber == 3 )
                 
                 computerNumber = 0;
                 
